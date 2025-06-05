@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/skapi-js@latest/dist/skapi.js"></script>
+    <script>
+        const skapi = new Skapi("ap228cRlnKWus275eFEc", "f8e16604-69e4-451c-9d90-4410f801c006");
+    </script>
+</head>
+<body>
+<div class="container">
+    <h2>Create Account</h2>
+    <form action="login.html" onsubmit="skapi.signup(event).catch(err=>alert(err.message))">
+        <label>Email
+            <input type="email" name="email" required>
+        </label>
+        <label>Password
+            <input type="password" name="password" required>
+        </label>
+        <label>Name
+            <input type="text" name="name">
+        </label>
+        <input type="submit" value="Sign Up">
+    </form>
+</div>
+</body>
+</html>

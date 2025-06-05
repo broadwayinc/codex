@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Upload Photo</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/skapi-js@latest/dist/skapi.js"></script>
+    <script>
+        const skapi = new Skapi("ap228cRlnKWus275eFEc", "f8e16604-69e4-451c-9d90-4410f801c006");
+        skapi.getProfile().then(p => { if(!p){ location.replace('login.html'); } });
+    </script>
+</head>
+<body>
+<div class="container">
+    <h2>Upload Photo</h2>
+    <form action="gallery.html" onsubmit="skapi.postRecord(event, { table: 'photos' }).catch(err=>alert(err.message))">
+        <label>Description
+            <input type="text" name="description">
+        </label>
+        <label>Photo
+            <input type="file" name="picture" accept="image/*" required>
+        </label>
+        <input type="submit" value="Upload">
+    </form>
+    <div class="nav">
+        <a href="gallery.html">Go to Gallery</a>
+    </div>
+</div>
+</body>
+</html>
