@@ -8,6 +8,7 @@
     <script>
         const skapi = new Skapi("ap228cRlnKWus275eFEc", "f8e16604-69e4-451c-9d90-4410f801c006");
         window.addEventListener('DOMContentLoaded', () => {
+
             const g = document.getElementById('gallery');
             const recent = sessionStorage.getItem('recent_photo');
             if (recent) {
@@ -28,6 +29,7 @@
                 sessionStorage.removeItem('recent_photo');
             }
             skapi.getRecords({ table: 'photos', ascending: false }).then(res => {
+
                 res.list.forEach(r => {
                     if(r.bin && r.bin.picture && r.bin.picture[0]) {
                         const div = document.createElement('div');
