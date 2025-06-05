@@ -8,12 +8,21 @@
     <script>
         const skapi = new Skapi("ap228cRlnKWus275eFEc", "f8e16604-69e4-451c-9d90-4410f801c006");
         skapi.getProfile().then(p => { if(!p){ location.replace('login.html'); } });
+        function uploadPhoto(event){
+            event.preventDefault();
+            skapi.postRecord(event, { table: 'photos' })
+                .then(rec => {
+                    sessionStorage.setItem('recent_photo', JSON.stringify(rec));
+                    location.href = 'gallery.html';
+                })
+                .catch(err => alert(err.message));
+        }
     </script>
 </head>
 <body>
 <div class="container">
     <h2>Upload Photo</h2>
-    <form action="gallery.html" onsubmit="skapi.postRecord(event, { table: 'photos' }).catch(err=>alert(err.message))">
+    <form action="gallery.html" onsubmit="uploadPhoto(event)">
         <label>Description
             <input type="text" name="description">
         </label>
