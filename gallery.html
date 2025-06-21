@@ -27,7 +27,7 @@
                         div.appendChild(img);
                         div.appendChild(p);
                         const del = document.createElement('button');
-                        del.textContent = 'Delete';
+                        del.textContent = '\u00d7';
                         del.onclick = () => {
                             if(confirm('Delete this photo?')){
                                 skapi.deleteRecords({ table: 'photos', record_id: r.record_id })
@@ -54,7 +54,7 @@
                         div.appendChild(img);
                         div.appendChild(p);
                         const del = document.createElement('button');
-                        del.textContent = 'Delete';
+                        del.textContent = '\u00d7';
                         del.onclick = () => {
                             if(confirm('Delete this photo?')){
                                 skapi.deleteRecords({ table: 'photos', record_id: r.record_id })
