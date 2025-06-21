@@ -11,9 +11,18 @@
             skapi.logout().then(() => location.reload());
         }
         window.addEventListener('DOMContentLoaded', () => {
+            const signupLink = document.querySelector('.nav a[href="signup.html"]');
+            const uploadLink = document.querySelector('.nav a[href="upload.html"]');
+            const galleryLink = document.querySelector('.nav a[href="gallery.html"]');
+            const logoutBtn = document.querySelector('.nav button');
             skapi.getProfile().then(p => {
                 if(p){
-                    location.replace('gallery.html');
+                    if(signupLink) signupLink.style.display = 'none';
+                }
+                else{
+                    if(uploadLink) uploadLink.style.display = 'none';
+                    if(galleryLink) galleryLink.style.display = 'none';
+                    if(logoutBtn) logoutBtn.style.display = 'none';
                 }
             });
         });
