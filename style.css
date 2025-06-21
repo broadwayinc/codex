@@ -73,3 +73,8 @@ button, input[type="submit"]{
   text-align:center;
   font-size:0.9em;
 }
+.photo button{
+  background:#dc3545;
+  width:100%;
+  margin-top:5px;
+}
