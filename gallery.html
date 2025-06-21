@@ -26,6 +26,16 @@
                         p.textContent = r.data ? r.data.description || '' : '';
                         div.appendChild(img);
                         div.appendChild(p);
+                        const del = document.createElement('button');
+                        del.textContent = 'Delete';
+                        del.onclick = () => {
+                            if(confirm('Delete this photo?')){
+                                skapi.deleteRecords({ table: 'photos', record_id: r.record_id })
+                                    .then(() => div.remove())
+                                    .catch(err => alert(err.message));
+                            }
+                        };
+                        div.appendChild(del);
                         g.prepend(div);
                     }
                 } catch(e) {}
@@ -43,6 +53,16 @@
                         p.textContent = r.data ? r.data.description || '' : '';
                         div.appendChild(img);
                         div.appendChild(p);
+                        const del = document.createElement('button');
+                        del.textContent = 'Delete';
+                        del.onclick = () => {
+                            if(confirm('Delete this photo?')){
+                                skapi.deleteRecords({ table: 'photos', record_id: r.record_id })
+                                    .then(() => div.remove())
+                                    .catch(err => alert(err.message));
+                            }
+                        };
+                        div.appendChild(del);
                         g.appendChild(div);
                     }
                 });
