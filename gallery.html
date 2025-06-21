@@ -7,6 +7,9 @@
     <script src="https://cdn.jsdelivr.net/npm/skapi-js@latest/dist/skapi.js"></script>
     <script>
         const skapi = new Skapi("ap228cRlnKWus275eFEc", "f8e16604-69e4-451c-9d90-4410f801c006");
+        function logout(){
+            skapi.logout().then(() => location.href='index.html');
+        }
         window.addEventListener('DOMContentLoaded', () => {
 
             const g = document.getElementById('gallery');
@@ -53,6 +56,7 @@
     <div id="gallery" class="gallery"></div>
     <div class="nav">
         <a href="upload.html">Upload More</a>
+        <button onclick="logout()">Logout</button>
     </div>
 </div>
 </body>

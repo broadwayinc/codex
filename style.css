@@ -20,6 +20,19 @@ body{
   color:#007bff;
   text-decoration:none;
 }
+.nav button{
+  margin:0 10px;
+  background:#dc3545;
+}
+
+.hero{
+  background:#007bff;
+  color:#fff;
+  padding:40px 20px;
+  border-radius:8px;
+  text-align:center;
+  margin-bottom:20px;
+}
 form label{
   display:block;
   margin:10px 0 5px;
